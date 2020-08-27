@@ -75,6 +75,7 @@ abstract class TestCase extends Orchestra
         $emptyConfig = [
             'ignoreDotFiles' => true,
             'ignoreVCS' => true,
+            'followSymLinks' => false,
             'include' => [
                 'paths' => [],
                 'files' => [],

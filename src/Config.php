@@ -39,6 +39,11 @@ class Config
         return $this->config['ignoreVCS'];
     }
 
+    public function followSymLinks(): bool
+    {
+        return $this->config['followSymLinks'];
+    }
+
     public function getIncludedPaths(): array
     {
         return $this->paths(self::INCLUDE);

@@ -15,7 +15,7 @@ if (! function_exists('mix_cdn')) {
      */
     function mix_cdn($path, $manifestDirectory = '')
     {
-        if (! config('asset-cdn.use_cdn')) {
+        if (! config('asset-cdn.use_cdn') || ! config('asset-cdn.use_mix_cdn')) {
             return mix($path, $manifestDirectory);
         }
 
@@ -67,9 +67,10 @@ if (! function_exists('asset_cdn')) {
             return asset($path);
         }
 
-        $cdnUrl = config('asset-cdn.cdn_url');
+        $cdnUrl = rtrim(config('asset-cdn.cdn_url'), '/') . config('asset-cdn.cdn_suffix');
         // Remove slashes from ending of the path
         $cdnUrl = rtrim($cdnUrl, '/');
+
 
         return $cdnUrl.'/'.trim($path, '/');
     }

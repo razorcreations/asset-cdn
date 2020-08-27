@@ -44,7 +44,8 @@ class Finder
             ->files()
             ->in($this->config->getPublicPath())
             ->ignoreDotFiles($this->config->ignoreDotFiles())
-            ->ignoreVCS($this->config->ignoreVCS());
+            ->ignoreVCS($this->config->ignoreVCS())
+            ->followLinks($this->config->followSymLinks());
     }
 
     /**
