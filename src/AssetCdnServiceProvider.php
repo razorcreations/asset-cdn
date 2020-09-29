@@ -35,13 +35,13 @@ class AssetCdnServiceProvider extends ServiceProvider
         });
 
         $this->app->bind('command.asset-cdn:push', PushCommand::class);
-        $this->app->bind('command.asset-cdn:sync', SyncCommand::class);
-        $this->app->bind('command.asset-cdn:empty', EmptyCommand::class);
+        // $this->app->bind('command.asset-cdn:sync', SyncCommand::class);
+        // $this->app->bind('command.asset-cdn:empty', EmptyCommand::class);
 
         $this->commands([
             'command.asset-cdn:push',
-            'command.asset-cdn:sync',
-            'command.asset-cdn:empty',
+            // 'command.asset-cdn:sync',
+            // 'command.asset-cdn:empty',
         ]);
     }
 }
